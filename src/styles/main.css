@@ -16,7 +16,7 @@ header h1 {
 }
 
 main {
-  max-width: 35rem;
+  max-width: 40rem;
   width: 100%;
   margin: 0 auto;
 }
@@ -94,6 +94,11 @@ main .form-content {
 
   font-weight: 700;
   color: white;
+  transition: filter 0.2s;
+}
+
+.form-content button:hover {
+  filter: brightness(0.9);
 }
 
 .log-table {
@@ -114,10 +119,21 @@ main .form-content {
 }
 
 .log-table thead th {
+  vertical-align: bottom;
   text-align: left;
   padding: 0.5rem 1rem;
   font-weight: 700;
   font-size: 0.875rem;
+  max-width: 4rem;
+
+  cursor: pointer;
+}
+
+.log-table thead th img{
+  width: 1rem;
+  height: 1rem;
+
+  margin-left: 0.875rem;
 }
 
 .log-table tbody td {
@@ -137,6 +153,12 @@ main .form-content {
 
   font-weight: 500;
   color: white;
+
+  transition: filter 0.2s;
+}
+
+.log-table tbody button:hover {
+  filter: brightness(0.9);
 }
 
 .log-table tbody button img {

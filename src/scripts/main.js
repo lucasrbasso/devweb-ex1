@@ -9,12 +9,16 @@ const createSportLog = (evento) => {
   const sport = document.querySelector('[data-form-sport]');
   const date = document.querySelector('[data-form-date]');
 
-  console.log(time.value, sport.value, date.value);
+  // const dateJs = new Date(date.value + 'T00:00:00');
+  // const dateFormatted = dateJs.getDate().toString().padStart(2, '0') + "/" +
+  //   (dateJs.getMonth()+1).toString().padStart(2, '0') + "/" +
+  //   dateJs.getFullYear();
 
   const log = document.createElement('tr');
   const buttonTable = document.createElement('td');
+
   const content = `
-    <td>${time.value}h</td>
+    <td>${time.value}</td>
     <td>${sport.value}</td>
     <td>${date.value}</td>
   `
