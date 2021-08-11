@@ -14,5 +14,3 @@ const createSportLog = (evento) => {
 
 const newLogSportButton = document.querySelector('[data-form-button]')
 newLogSportButton.addEventListener('click', createSportLog)
-
-
