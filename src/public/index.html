@@ -12,25 +12,26 @@
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-    <div class="app">
-        <header>
-          <h1>Workout Log</h1>
-        </header>
-        <main>
-          <form class="insert-menu">
-            <h3> Insert an item</h3>
-            <div class="form-content">
-              <input class="time" type="text" placeholder="Time spent"/>
-              <select>
-                <option>Run</option>
-                <option>Swim</option>
-                <option>Bike</option>
-              </select>
-              <input type="date" id="date">
-              <button type="submit">Add</button>
-            </div>
-          </form>
-        </main>
-    </div>
+  <div class="app">
+    <header>
+      <h1>Workout Log</h1>
+    </header>
+    <main>
+      <form class="insert-menu">
+        <h3> Insert an item</h3>
+        <div class="form-content">
+          <input class="time" type="text" placeholder="Time spent" data-form-time/>
+          <select data-form-sport>
+            <option>Run</option>
+            <option>Swim</option>
+            <option>Bike</option>
+          </select>
+          <input type="date" id="date" data-form-date>
+          <button data-form-button>Add</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script type="module" src="../scripts/main.js"></script>
 </body>
 </html>

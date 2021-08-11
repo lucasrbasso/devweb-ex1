@@ -16,7 +16,7 @@ header h1 {
 }
 
 main {
-  max-width: 31.25rem;
+  max-width: 35rem;
   width: 100%;
   margin: 0 auto;
   flex-direction: column;
