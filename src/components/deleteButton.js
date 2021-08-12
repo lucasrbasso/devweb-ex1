@@ -19,7 +19,15 @@ const removeLog = (evento) => {
   const deleteButton = evento.target
 
   const logToBeRemoved = deleteButton.parentNode.parentNode;
-  logToBeRemoved.remove()
+
+  let currentTimeSpent = document.getElementById('timeValue').innerText;
+  let currentTaskTime = logToBeRemoved.getElementsByTagName('td')[0].innerText;
+
+  const totalTime = Number(currentTimeSpent) - Number(currentTaskTime);
+  document.getElementById('timeValue').innerText = String(totalTime);
+
+  logToBeRemoved.remove();
+
 
   return deleteButton
 }
