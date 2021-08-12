@@ -13,7 +13,7 @@ const createSportLog = (evento) => {
   date.classList.remove('error');
 
 
-  if(!time.value) {
+  if(!time.value || Number(time.value) <= 0) {
     time.classList.add('error');
   }
 
@@ -21,7 +21,7 @@ const createSportLog = (evento) => {
     date.classList.add('error');
   }
 
-  if (!time.value || !date.value) {
+  if (!time.value || !date.value || Number(time.value) <= 0) {
     return;
   }
 
