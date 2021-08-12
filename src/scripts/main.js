@@ -25,6 +25,13 @@ const createSportLog = (evento) => {
 
   logTableBody.appendChild(log);
 
+  let currentTimeSpent = document.getElementById('timeValue').innerText;
+  const totalTime = Number(currentTimeSpent) + Number(time.value);
+  document.getElementById('timeValue').innerText = String(totalTime)
+
+  console.log(time.value)
+  console.log(totalTime)
+  console.log(currentTimeSpent)
 
   time.value="";
   date.value="";

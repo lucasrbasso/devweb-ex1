@@ -171,3 +171,8 @@ main .form-content {
   width: 4rem;
 }
 
+main h2 {
+  margin-top: 2rem;
+  text-align: center;
+}
+
