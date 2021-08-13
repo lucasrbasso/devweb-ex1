@@ -43,7 +43,7 @@ const createSportLog = (evento) => {
 
   let currentTimeSpent = document.getElementById('timeValue').innerText;
   const totalTime = Number(currentTimeSpent) + Number(time.value);
-  document.getElementById('timeValue').innerText = String(totalTime);
+  document.getElementById('timeValue').innerText = totalTime.toString();
 
   time.value="";
   date.value="";
