@@ -1,3 +1,5 @@
+import calcTotalTime from '../scripts/calcTotalTime.js';
+
 const DeleteButton = () => {
   const deleteButton = document.createElement('button');
 
@@ -15,19 +17,15 @@ const DeleteButton = () => {
   return deleteButton
 }
 
-const removeLog = (evento) => {
-  const deleteButton = evento.target
+const removeLog = (event) => {
+  const deleteButton = event.target
 
   const logToBeRemoved = deleteButton.parentNode.parentNode;
 
-  let currentTimeSpent = document.getElementById('timeValue').innerText;
-  let currentTaskTime = logToBeRemoved.getElementsByTagName('td')[0].innerText;
-
-  const totalTime = Number(currentTimeSpent) - Number(currentTaskTime);
-  document.getElementById('timeValue').innerText = String(totalTime);
+  const currentTaskTime = logToBeRemoved.querySelector('[data-time]').dataset.time;
+  calcTotalTime(currentTaskTime, 'remove');
 
   logToBeRemoved.remove();
-
 
   return deleteButton
 }
