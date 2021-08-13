@@ -1,6 +1,6 @@
 import DeleteButton from '../components/deleteButton.js';
 import validate from './validate.js';
-import calcTotalTime from './calcTotalTime.js';
+import { increaseTotalTime } from '../scripts/updateTotalTime.js';
 
 const createSportLog = (event) => {
 
@@ -31,11 +31,11 @@ const createSportLog = (event) => {
   buttonTable.appendChild(DeleteButton());
 
   log.innerHTML = content;
-  log.appendChild(buttonTable);
 
+  log.appendChild(buttonTable);
   logTableBody.appendChild(log);
 
-  calcTotalTime(time.value, 'add');
+  increaseTotalTime(time.value);
 
   time.value = "";
   date.value = "";

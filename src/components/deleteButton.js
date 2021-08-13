@@ -1,4 +1,4 @@
-import calcTotalTime from '../scripts/calcTotalTime.js';
+import { decreaseTotalTime } from '../scripts/updateTotalTime.js';
 
 const DeleteButton = () => {
   const deleteButton = document.createElement('button');
@@ -23,11 +23,11 @@ const removeLog = (event) => {
   const logToBeRemoved = deleteButton.parentNode.parentNode;
 
   const currentTaskTime = logToBeRemoved.querySelector('[data-time]').dataset.time;
-  calcTotalTime(currentTaskTime, 'remove');
+  decreaseTotalTime(currentTaskTime);
 
   logToBeRemoved.remove();
 
-  return deleteButton
+  return deleteButton;
 }
 
 export default DeleteButton
