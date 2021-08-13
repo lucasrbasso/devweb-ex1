@@ -77,12 +77,16 @@ main .form-content {
   color: #121214;
 }
 
-.form-content #date {
+.form-content .date-picker {
   width: 35%;
   background: white;
   border: none;
   border-radius: 0.4rem;
   padding: 0.4rem;
+}
+
+.form-content .error{
+  border: 2px solid #ff3333;
 }
 
 .form-content button {
@@ -169,5 +173,10 @@ main .form-content {
 
 .button-head {
   width: 4rem;
+}
+
+main h2 {
+  margin-top: 2rem;
+  text-align: center;
 }
 

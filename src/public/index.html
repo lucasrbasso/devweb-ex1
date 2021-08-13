@@ -20,13 +20,13 @@
       <form class="insert-menu">
         <h3> Insert an item</h3>
         <div class="form-content">
-          <input class="time" type="text" placeholder="Time spent" data-form-time/>
+          <input class="time" type="number" min="0" placeholder="Time spent" data-form-time/>
           <select data-form-sport>
             <option>Run</option>
             <option>Swim</option>
             <option>Bike</option>
           </select>
-          <input type="date" id="date" data-form-date>
+          <input type="date" class="date-picker" data-form-date>
           <button data-form-button>Add</button>
         </div>
       </form>
@@ -41,6 +41,7 @@
         </thead>
         <tbody data-table-body />
       </table>
+      <h2><span class="time-spent" id="timeValue">0</span> hours of exercises</h2>
     </main>
   </div>
   <script type="module" src="../scripts/main.js"></script>
