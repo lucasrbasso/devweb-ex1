@@ -9,6 +9,22 @@ const createSportLog = (evento) => {
   const sport = document.querySelector('[data-form-sport]');
   const date = document.querySelector('[data-form-date]');
 
+  time.classList.remove('error');
+  date.classList.remove('error');
+
+
+  if(!time.value || Number(time.value) <= 0) {
+    time.classList.add('error');
+  }
+
+  if(!date.value) {
+    date.classList.add('error');
+  }
+
+  if (!time.value || !date.value || Number(time.value) <= 0) {
+    return;
+  }
+
   const log = document.createElement('tr');
   const buttonTable = document.createElement('td');
 
@@ -27,11 +43,7 @@ const createSportLog = (evento) => {
 
   let currentTimeSpent = document.getElementById('timeValue').innerText;
   const totalTime = Number(currentTimeSpent) + Number(time.value);
-  document.getElementById('timeValue').innerText = String(totalTime)
-
-  console.log(time.value)
-  console.log(totalTime)
-  console.log(currentTimeSpent)
+  document.getElementById('timeValue').innerText = totalTime.toString();
 
   time.value="";
   date.value="";
