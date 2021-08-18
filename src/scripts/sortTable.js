@@ -6,23 +6,23 @@ function sortTable(n) {
   dir = "asc";
 
   const upArrow = document.createElement('img');
-  upArrow.src = '../assets/bxs-up-arrow.png'
-  upArrow.alt = 'up'
+  upArrow.src = '../assets/bxs-up-arrow.png';
+  upArrow.alt = 'up';
 
   const downArrow = document.createElement('img');
-  downArrow.src = '../assets/bxs-down-arrow.png'
-  downArrow.alt = 'down'
+  downArrow.src = '../assets/bxs-down-arrow.png';
+  downArrow.alt = 'down';
 
-  const thElementRow = table.rows[0].getElementsByTagName("th")[n]
-  const imgElement = table.rows[0].getElementsByTagName("img")
+  const thElementRow = table.rows[0].getElementsByTagName("th")[n];
+  const imgElement = table.rows[0].getElementsByTagName("img");
 
-  if(imgElement.length == 1 && thElementRow.childNodes.length < 2) {
+  if (imgElement.length == 1 && thElementRow.childNodes.length < 2) {
     imgElement[0].parentNode.removeChild(imgElement[0]);
   }
 
   if (thElementRow.childNodes.length < 2) {
     thElementRow.appendChild(upArrow)
-  } else if(thElementRow.lastChild.alt === 'up') {
+  } else if (thElementRow.lastChild.alt === 'up') {
     thElementRow.removeChild(thElementRow.lastChild);
     thElementRow.appendChild(downArrow)
   } else if (thElementRow.lastChild.alt === 'down') {

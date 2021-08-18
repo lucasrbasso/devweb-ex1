@@ -1,53 +1,45 @@
 import DeleteButton from '../components/deleteButton.js';
+import validate from './validate.js';
+import { increaseTotalTime } from '../scripts/updateTotalTime.js';
 
-const createSportLog = (evento) => {
+const createSportLog = (event) => {
 
-  evento.preventDefault()
+  event.preventDefault();
 
-  const logTableBody = document.querySelector('[data-table-body]');
-  const time = document.querySelector('[data-form-time]');
-  const sport = document.querySelector('[data-form-sport]');
-  const date = document.querySelector('[data-form-date]');
+  const logTableBody = document.getElementById('workout-table-body');
 
-  time.classList.remove('error');
-  date.classList.remove('error');
+  const workout = {};
 
+  document.querySelectorAll('#workout-log [name]')
+    .forEach(input => workout[input.name] = input);
 
-  if(!time.value || Number(time.value) <= 0) {
-    time.classList.add('error');
-  }
+  const { time, sport, date } = workout;
 
-  if(!date.value) {
-    date.classList.add('error');
-  }
-
-  if (!time.value || !date.value || Number(time.value) <= 0) {
+  if(!validate(time,date)) {
     return;
-  }
+  };
 
   const log = document.createElement('tr');
   const buttonTable = document.createElement('td');
 
   const content = `
-    <td>${time.value}</td>
+    <td data-time="${time.value}">${time.value}</td>
     <td>${sport.value}</td>
     <td>${date.value}</td>
-  `
+  `;
 
   buttonTable.appendChild(DeleteButton());
 
   log.innerHTML = content;
-  log.appendChild(buttonTable);
 
+  log.appendChild(buttonTable);
   logTableBody.appendChild(log);
 
-  let currentTimeSpent = document.getElementById('timeValue').innerText;
-  const totalTime = Number(currentTimeSpent) + Number(time.value);
-  document.getElementById('timeValue').innerText = totalTime.toString();
+  increaseTotalTime(time.value);
 
-  time.value="";
-  date.value="";
+  time.value = "";
+  date.value = "";
 }
 
-const newLogSportButton = document.querySelector('[data-form-button]')
-newLogSportButton.addEventListener('click', createSportLog)
+const newLogSportButton = document.getElementById('submit-button');
+newLogSportButton.addEventListener('click', createSportLog);
